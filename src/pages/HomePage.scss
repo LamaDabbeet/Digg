@@ -1,0 +1,71 @@
+@import "../utils/colors";
+
+.home-page {
+	.container-fluid {
+		height: 100vh;
+		> .row {
+			height: 100vh;
+		}
+	}
+	font-family: "Sora", sans-serif !important;
+	.left-side {
+		background: url("../images/homepage-bg.jpg") no-repeat center;
+		background-size: cover;
+		position: relative;
+		color: white;
+		padding: 2% 3%;
+		.quote {
+			font-weight: 300;
+			font-size: 20px;
+		}
+		.student-name,
+		.student-country {
+			font-weight: 600;
+			font-size: 22px;
+		}
+		@media screen and (max-width: 576px) {
+			display: none;
+		}
+	}
+	.right-side {
+		padding: 2% 3%;
+		.apply-now {
+			font-weight: 400;
+			font-size: 1.5rem !important;
+		}
+		form {
+			margin: 2rem 0;
+			input,
+			.dropdown button {
+				border: none !important;
+				height: 3.5rem !important;
+				width: 100%;
+				&:focus {
+					outline: none !important;
+					border: 1px solid $secondaryBlueColor !important;
+					box-shadow: none;
+				}
+			}
+			.dropdown {
+				@media screen and (max-width: 576px) {
+					margin-top: 1rem;
+				}
+			}
+			.dropdown-menu {
+				width: 100%;
+			}
+
+			.button-container {
+				display: flex;
+				justify-content: flex-end;
+				margin-top: 1rem;
+				@media screen and (max-width: 576px) {
+					float: left;
+				}
+			}
+		}
+		@media screen and (max-width: 576px) {
+			margin-top: 2rem;
+		}
+	}
+}

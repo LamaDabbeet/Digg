@@ -1,0 +1,34 @@
+@import "../../utils/colors";
+
+.review-application {
+	font-weight: 400;
+	font-family: "Sora", sans-serif;
+    .title{
+        margin: 2rem 0 ;
+    }
+	.basic-info-box {
+		width: 100%;
+		padding: 2rem;
+		background-color: #f3f3f3;
+		p {
+			color: $primaryBlueColor;
+		}
+		.info-blocks-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			.info-block {
+				width: 14rem;
+				padding: 1rem;
+			}
+		}
+	}
+	.questionnair-box {
+		margin: 2rem 0;
+		width: 100%;
+		padding: 2rem;
+		background-color: #f3f3f3;
+		.title {
+			color: $primaryBlueColor;
+		}
+	}
+}

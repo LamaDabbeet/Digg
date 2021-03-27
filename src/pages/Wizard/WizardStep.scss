@@ -1,0 +1,68 @@
+.wizard-step {
+	padding: 2% 3%;
+	font-weight: 400;
+	font-family: "Sora", sans-serif;
+	form {
+		margin: 1rem 0;
+		.radio-group {
+			margin: 1rem 0;
+			.radio-buttons-wrapper {
+				display: flex;
+				justify-content: flex-start;
+				flex-wrap: wrap;
+				.radio {
+					margin: 1.5rem 0;
+					input {
+						position: absolute;
+						pointer-events: none;
+						visibility: hidden;
+					}
+					input:focus + label {
+						background: darken(#efefef, 10%);
+						.checker {
+							border-color: darken(#efefef, 10%);
+						}
+					}
+					input:checked + label {
+						.checker {
+							background: darken(#efefef, 20%);
+						}
+					}
+					label {
+						display: flex;
+						align-items: center;
+						height: 28px;
+						border-radius: 14px;
+						margin: 0;
+						cursor: pointer;
+						transition: background-color 0.3s ease;
+
+						&:hover {
+							.checker {
+								background: darken(#efefef, 10%);
+							}
+						}
+					}
+
+					.checker {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: auto;
+						max-height: 3.5rem;
+						padding: 1rem 2rem;
+						border-radius: 35px;
+						margin-right: 8px;
+						background: #efefef;
+						transition: box-shadow 0.3s ease;
+						font-weight: 400;
+						font-size: 14px;
+						@media screen and (max-width: 576px) {
+							padding: 0.75rem 1.5rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
