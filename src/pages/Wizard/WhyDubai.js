@@ -17,8 +17,8 @@ const WhyDubai = (props) =>{
     localStorage.setItem("visitReasons", JSON.stringify(visitReasons));
     props.nextStep();
   }
-      return (
-            <div className="wizard-step">
+      return ( 
+          <div className="wizard-step">
             <Container fluid>
                 <Row>
                     <Col md='3'><h1 className="digg-title">digg</h1></Col>

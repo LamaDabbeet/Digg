@@ -113,7 +113,7 @@ export default class ReviewApplication extends Component {
                 </div>
                 <div className='buttons-container' >
                     <button className="dig-white-button" onClick={this.props.previousStep}>Back</button>
-                    <button className="dig-blue-button" onClick={this.props.nextStep}>Complete Application </button>
+                    <button className="submit-application dig-blue-button" onClick={this.props.nextStep}>Complete Application </button>
                 </div>                      
                </Container>
             </div>

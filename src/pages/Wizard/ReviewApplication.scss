@@ -54,5 +54,11 @@
 				}
 			}
 		}
+		
+	}
+	.submit-application {
+		@media screen and (max-width: 576px) {
+			padding: 0.6rem 1.6rem 
+		}
 	}
 }
