@@ -9,6 +9,7 @@
 	font-size: 22px;
 	@media screen and (max-width: 576px) {
 		padding: 0.6rem 2.5rem;
+		font-size: 0.9rem;
 	}
 }
 .dig-white-button {
@@ -23,6 +24,6 @@
 		background: none;
 		border: none;
 		text-decoration: underline;
-		padding:0
+		padding: 0;
 	}
 }

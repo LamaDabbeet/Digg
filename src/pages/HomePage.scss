@@ -14,14 +14,32 @@
 		position: relative;
 		color: white;
 		padding: 2% 3%;
+		overflow: hidden;
+		.red-drop {
+			position: absolute;
+			bottom: -55%;
+			overflow: hidden;
+			transform: rotate(55deg);
+			left: 20%;
+		}
+		.yellow-drop {
+			position: absolute;
+			top: -55%;
+			left: 23%;
+		}
+		.white-drop {
+			width: 55%;
+			margin: 2rem 0 1rem;
+		}
 		.quote {
 			font-weight: 300;
-			font-size: 20px;
+			font-size: 0.85rem;
+			width: 80%;
 		}
 		.student-name,
 		.student-country {
 			font-weight: 600;
-			font-size: 22px;
+			font-size: 0.92rem;
 		}
 		@media screen and (max-width: 576px) {
 			display: none;
@@ -36,9 +54,9 @@
 		form {
 			margin: 2rem 0;
 			input,
-			.dropdown button {
+			select {
 				border: none !important;
-				height: 3.5rem !important;
+				height: 3.5rem;
 				width: 100%;
 				&:focus {
 					outline: none !important;
@@ -46,15 +64,20 @@
 					box-shadow: none;
 				}
 			}
-			.dropdown {
-				@media screen and (max-width: 576px) {
-					margin-top: 1rem;
+			.gender-radios-group {
+				display: flex;
+				justify-content: flex-start;
+				input[type="radio"] {
+					margin-top: 0;
+					height: 1.4rem !important;
+				}
+				.invalid-feedback {
+					display: block;
+				}
+				label {
+					margin: 0 0.5rem;
 				}
 			}
-			.dropdown-menu {
-				width: 100%;
-			}
-
 			.button-container {
 				display: flex;
 				justify-content: flex-end;

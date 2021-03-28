@@ -3,9 +3,9 @@
 .review-application {
 	font-weight: 400;
 	font-family: "Sora", sans-serif;
-    .title{
-        margin: 2rem 0 ;
-    }
+	.title {
+		margin: 2rem 0;
+	}
 	.basic-info-box {
 		width: 100%;
 		padding: 2rem;
@@ -16,9 +16,13 @@
 		.info-blocks-wrapper {
 			display: flex;
 			flex-wrap: wrap;
+			justify-content: end;
+			font-size: 0.9rem;
 			.info-block {
-				width: 14rem;
 				padding: 1rem;
+				span {
+					font-weight: 300;
+				}
 			}
 		}
 	}
@@ -27,8 +31,28 @@
 		width: 100%;
 		padding: 2rem;
 		background-color: #f3f3f3;
+		.question-block {
+			margin: 2rem 0;
+		}
 		.title {
 			color: $primaryBlueColor;
+		}
+		.answers-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			.answer {
+				background: linear-gradient(to right, #4734e1, #8e27ea);
+				padding: 1rem 1.5rem;
+				border-radius: 35px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				margin-right: 1rem;
+				@media screen and (max-width: 576px) {
+					margin-top: 1rem;
+				}
+			}
 		}
 	}
 }

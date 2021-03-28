@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch,Route } from "react-router-dom";
 import HomePage from './pages/HomePage';
 import Wizard from './pages/Wizard/Wizard';
 
+
 function App() {
   return (
     <div className="App">

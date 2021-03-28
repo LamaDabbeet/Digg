@@ -7,7 +7,7 @@ import './WizardStep.scss'
 export default class Education extends Component {
     render() {
         return (
-        <div class="wizard-step">
+        <div className="wizard-step">
             <Container fluid>
                 <Row>
                     <Col md='3'><h1 className="digg-title">digg</h1></Col>

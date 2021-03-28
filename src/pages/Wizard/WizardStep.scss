@@ -2,67 +2,93 @@
 	padding: 2% 3%;
 	font-weight: 400;
 	font-family: "Sora", sans-serif;
+	@media screen and (max-width: 576px) {
+		padding: 2.5rem 1rem;
+	}
 	form {
 		margin: 1rem 0;
 		.radio-group {
-			margin: 1rem 0;
+			margin: 2rem 0;
 			.radio-buttons-wrapper {
 				display: flex;
 				justify-content: flex-start;
 				flex-wrap: wrap;
-				.radio {
-					margin: 1.5rem 0;
-					input {
-						position: absolute;
-						pointer-events: none;
-						visibility: hidden;
-					}
-					input:focus + label {
-						background: darken(#efefef, 10%);
-						.checker {
-							border-color: darken(#efefef, 10%);
-						}
-					}
-					input:checked + label {
-						.checker {
-							background: darken(#efefef, 20%);
-						}
-					}
-					label {
-						display: flex;
-						align-items: center;
-						height: 28px;
-						border-radius: 14px;
-						margin: 0;
-						cursor: pointer;
-						transition: background-color 0.3s ease;
 
-						&:hover {
-							.checker {
-								background: darken(#efefef, 10%);
-							}
-						}
-					}
-
-					.checker {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						width: auto;
-						max-height: 3.5rem;
-						padding: 1rem 2rem;
-						border-radius: 35px;
-						margin-right: 8px;
-						background: #efefef;
-						transition: box-shadow 0.3s ease;
-						font-weight: 400;
-						font-size: 14px;
-						@media screen and (max-width: 576px) {
-							padding: 0.75rem 1.5rem;
-						}
+				.wrapper {
+					display: block;
+					position: relative;
+					padding-left: 35px;
+					margin-bottom: 1rem;
+					margin-right: 5rem;
+					margin-top: 3rem;
+					cursor: pointer;
+					font-size: 22px;
+					-webkit-user-select: none;
+					-moz-user-select: none;
+					-ms-user-select: none;
+					user-select: none;
+					@media screen and (max-width: 670px) {
+						margin-bottom: 4rem;
 					}
 				}
+				.wrapper input {
+					position: absolute;
+					opacity: 0;
+					cursor: pointer;
+				}
+				.checkmark {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 2.5rem;
+					padding: 1rem 3.5rem;
+					width: 5rem;
+					background-color: #eee;
+					border-radius: 35px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 0.65rem;
+					margin-right: 2rem;
+					white-space: nowrap;
+				}
+				.wrapper:hover input ~ .checkmark {
+					background-color: darken(#efefef, 10%);
+				}
+				.wrapper input:checked ~ .checkmark {
+					background-color: darken(#efefef, 25%);
+				}
+				.checkmark:after {
+					content: "";
+					position: absolute;
+					display: none;
+				}
+				.wrapper input:checked ~ .checkmark:after {
+					display: block;
+				}
+				.wrapper .checkmark:after {
+					top: 9px;
+					left: 9px;
+					width: 8px;
+					height: 8px;
+					border-radius: 50%;
+					background: transperent;
+				}
 			}
+		}
+	}
+	.buttons-container {
+		margin-top: 5rem;
+		button[disabled]:active,
+		button[disabled],
+		input[type="button"][disabled]:active,
+		input[type="button"][disabled],
+		input[type="submit"][disabled]:active,
+		input[type="submit"][disabled],
+		button[disabled]:hover,
+		input[type="button"][disabled]:hover,
+		input[type="submit"][disabled]:hover {
+			background: linear-gradient(to right, #8c82d8, #b781e6) !important;
 		}
 	}
 }

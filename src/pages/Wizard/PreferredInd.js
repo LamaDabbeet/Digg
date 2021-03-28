@@ -1,323 +1,56 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import ProgressBar from '../../components/ProgressBar'
 import {Container,Row,Col} from 'react-bootstrap'
+import { alertService } from '../../services/AlertService';
 import './WizardStep.scss'
+import preferredIndustries from '../../data/preferredIndustries.json';
 
-
-export default class Education extends Component {
-    render() {
+const PreferredInd = (props) =>{
+    const [indList, setPreferred] = useState([]);
+    const setPrefInd =(value)=>{
+      if(indList.length<3) setPreferred(oldArray => [...oldArray, value]);
+      else alert('Only three options are allowed!')
+    }
+   
+    const handleSubmit = (e) =>{
+      e.preventDefault();  
+      var preferredIndust = indList;
+      localStorage.setItem("preferredIndust", JSON.stringify(preferredIndust));
+      props.nextStep();
+    }
         return (
-        <div class="wizard-step">
+        <div className="wizard-step">
             <Container fluid>
                 <Row>
                     <Col md='3'><h1 className="digg-title">digg</h1></Col>
-                    <Col md='9'><ProgressBar stepsInfo={this.props}/></Col>
+                    <Col md='9'><ProgressBar stepsInfo={props}/></Col>
                 </Row>
                 <form>
-                    <div class="radio-group">
+                <div className="radio-group">
                       <p>What industries would you prefer to work in?</p>
-                       <div class="radio-buttons-wrapper">
-                           
-                       <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Construction</span></div>        
-                                    </label>
-                        </div>
-                   
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Hospitality</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Real estate</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Tourism</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Technology</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Media</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Farming</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Fishing</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Education</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Public services</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Administration</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Media</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Farming</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Fishing</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Education</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Public services</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Administration</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Financial services</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Legal</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Health care</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Government </span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Medical</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Security</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Logistics</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Robotics</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Fashion</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Automotive</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Transportation</span></div>        
-                                    </label>
-                            </div>
-                            <div className="radio">
-                                <input
-                                    id="combination1"
-                                    type="radio"
-                                    name="combination1"
-                                    />
-                                    <label htmlFor="combination1"> 
-                                    <div className="checker"> <span>Customer support</span></div>        
-                                    </label>
-                            </div>
-                       </div>           
-                    </div>                     
+                        <div className="radio-buttons-wrapper">
+                        {
+                        preferredIndustries.data.map((industry,index)=>(
+                          <label key={index} className="wrapper">
+                          <input  
+                                value={industry.name}
+                                  checked={indList.includes(industry.name)}
+                                  type="checkbox" 
+                                    name={index}
+                                  onChange={() => setPrefInd(industry.name)} />
+                                <span className="checkmark"><span>{industry.name}</span></span>
+                              </label>
+                              ))
+                          }
+                      </div>
+                    </div>
                 </form>
                 <div className='buttons-container' >
-                    <button className="dig-white-button" onClick={this.props.previousStep}>Back</button>
-                    <button className="dig-blue-button" onClick={this.props.nextStep}>Next </button>
+                    <button className="dig-white-button" onClick={props.previousStep}>Back</button>
+                    <button className="dig-blue-button" disabled={indList.length===0} onClick={handleSubmit}>Next </button>
                 </div>
             </Container>
         </div>
         )
     }
-}
+export default PreferredInd;
