@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import ProgressBar from '../../components/ProgressBar'
 import {Container,Row,Col} from 'react-bootstrap'
-import { alertService } from '../../services/AlertService';
 import './WizardStep.scss'
 import preferredIndustries from '../../data/preferredIndustries.json';
 
