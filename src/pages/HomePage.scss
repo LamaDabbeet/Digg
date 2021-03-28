@@ -9,6 +9,10 @@
 	}
 	font-family: "Sora", sans-serif !important;
 	.left-side {
+		display: flex;
+		overflow: visible !important;
+		flex-direction: column;
+		justify-content: space-evenly;
 		background: url("../images/homepage-bg.jpg") no-repeat center;
 		background-size: cover;
 		position: relative;
@@ -26,6 +30,12 @@
 			position: absolute;
 			top: -55%;
 			left: 23%;
+			@media screen and (max-width: 576px) {
+				position: absolute;
+				top: -17rem;
+				left: 45%;
+				transform: rotate(17deg);
+			}
 		}
 		.white-drop {
 			width: 55%;
@@ -40,19 +50,35 @@
 		.student-country {
 			font-weight: 600;
 			font-size: 0.92rem;
+			margin-bottom: 0 !important;
 		}
 		@media screen and (max-width: 576px) {
-			display: none;
+			background: none;
+			p,
+			.white-drop {
+				display: none;
+			}
+			h1 {
+				color: #000;
+			}
+		}
+		@media screen and (max-width: 765px) {
+			.red-drop {
+				display: none;
+			}
 		}
 	}
 	.right-side {
 		padding: 2% 3%;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
 		.apply-now {
 			font-weight: 400;
 			font-size: 1.5rem !important;
 		}
 		form {
-			margin: 2rem 0;
+			width: 100%;
 			input,
 			select {
 				border: none !important;
@@ -89,6 +115,17 @@
 		}
 		@media screen and (max-width: 576px) {
 			margin-top: 2rem;
+		}
+	}
+	.red-drop-mobile {
+		display: none;
+		@media screen and (max-width: 576px) {
+			display: block;
+			position: absolute;
+			bottom: -55%;
+			overflow: hidden;
+			transform: rotate(55deg);
+			left: 20%;
 		}
 	}
 }

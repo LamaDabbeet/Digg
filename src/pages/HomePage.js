@@ -97,7 +97,7 @@ const HomePage = () => {
             <div className="home-page">
                 <Container fluid>
                     <Row>
-                    <Col md={5} className="left-side">
+                    <Col md={5} xs={12} className="left-side">
                         <img className="yellow-drop" src={YellowImg} alt="yellow-drop"/>
                         <h1 className="digg-home-title">digg</h1> 
                         <img className="white-drop" src={WhiteImg} alt="white-drop"/>
@@ -203,8 +203,9 @@ const HomePage = () => {
                           </Link>
                         </div>
                     </Form>
+                    <img className="red-drop-mobile" src={RedImg} alt="red-drop"/>
                     </Col>
-                    </Row>
+                  </Row>
                 </Container> 
             </div>
         )
